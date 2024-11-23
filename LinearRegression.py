@@ -32,11 +32,6 @@ charges = dataFrame['charges'].groupby(dataFrame['region'], observed=True).sum()
 # One-hot encode categorical variables
 dataFrame = pd.get_dummies(dataFrame, drop_first=True)
 
-# Convert True/False columns to 1/0
-dataFrame = dataFrame.astype(int)
-
-print(dataFrame.head())
-
 # Define features and target variable
 x = dataFrame.drop(['charges'], axis=1)
 y = dataFrame['charges']

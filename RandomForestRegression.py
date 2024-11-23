@@ -23,9 +23,11 @@ print("Data Types of Each Column:", dataFrame.dtypes)
 # Check for missing values in each column
 print("\nMissing Values in Each Column:", dataFrame.isnull().sum())
 
-
 # Convert 'sex', 'smoker', and 'region' columns to category type
 dataFrame[['sex', 'smoker', 'region']] = dataFrame[['sex', 'smoker', 'region']].astype('category')
+
+# Group by 'region' and sum 'charges', then sort with observed=True to adopt future behavior
+charges = dataFrame['charges'].groupby(dataFrame['region'], observed=True).sum().sort_values(ascending=True)
 
 # One-hot encode categorical variables
 dataFrame = pd.get_dummies(dataFrame, drop_first=True)
