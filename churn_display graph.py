@@ -39,12 +39,6 @@ churn_counts = dataFrame['Churn'].value_counts()
 print(dataFrame['PaymentMethod'].value_counts())
 PaymentMethod_counts = dataFrame['PaymentMethod'].value_counts()
 
-# Gender Distribution Pie Chart
-plt.figure(figsize=(6, 6))
-plt.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', colors=['blue', 'pink'])
-plt.title('Gender Distribution')
-plt.show()
-
 # Churn Distribution Pie Chart
 plt.figure(figsize=(6, 6))
 plt.pie(churn_counts, labels=churn_counts.index, autopct='%1.1f%%', colors=['green', 'blue'])
