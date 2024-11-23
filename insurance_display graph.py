@@ -56,16 +56,6 @@ plt.xticks(rotation=45)
 plt.legend(title='Smoker')
 plt.show()
 
-# Plotting Average Insurance Charges by Region and Number of Children
-plt.figure(figsize=(12, 8))
-sns.barplot(x='region', y='charges', hue='children', data=dataFrame, palette='Set1')
-plt.xlabel('Region')
-plt.ylabel('Average Charges')
-plt.title('Average Insurance Charges by Region and Number of Children')
-plt.xticks(rotation=45)
-plt.legend(title='Number of Children')
-plt.show()
-
 # Scatter plot for Age vs Charges
 sns.lmplot(x='age', y='charges', data=dataFrame, hue='smoker', palette='Set1')
 plt.title('Insurance Charges vs Age')
