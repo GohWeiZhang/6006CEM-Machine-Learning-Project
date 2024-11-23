@@ -40,6 +40,9 @@ scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
+# Define the KNN model 
+knn = KNeighborsClassifier()
+
 # Perform Grid Search to find the best value for n_neighbors
 param_grid = {'n_neighbors': np.arange(1, 31)}
 grid_search = GridSearchCV(KNeighborsClassifier(), param_grid, cv=5, scoring='accuracy')
