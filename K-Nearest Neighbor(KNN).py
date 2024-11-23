@@ -17,6 +17,9 @@ dataFrame = dataFrame.drop(['customerID'], axis=1)
 dataFrame['TotalCharges'] = pd.to_numeric(dataFrame['TotalCharges'], errors='coerce')
 dataFrame['TotalCharges'] = dataFrame['TotalCharges'].fillna(dataFrame['TotalCharges'].mean())
 
+# Check for missing values in each column
+print("\nMissing Values in Each Column:", dataFrame.isnull().sum())
+
 # Map SeniorCitizen to categorical values
 dataFrame['SeniorCitizen'] = dataFrame['SeniorCitizen'].map({0: "No", 1: "Yes"})
 
